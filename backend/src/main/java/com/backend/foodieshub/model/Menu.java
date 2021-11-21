@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -18,7 +19,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name="menu")
+@Table(name = "menu")
 public class Menu {
     @Id
     @GeneratedValue
@@ -28,11 +29,13 @@ public class Menu {
     private String description;
     private String photo;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name="type_id")
+    // @OneToOne(cascade = CascadeType.ALL)
+    @ManyToOne
+    @JoinColumn(name = "type_id")
     private FoodType foodType;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name="cat_id")
+    // @OneToOne(cascade = CascadeType.ALL)
+    @ManyToOne
+    @JoinColumn(name = "cat_id")
     private FoodCategory foodCategory;
 }

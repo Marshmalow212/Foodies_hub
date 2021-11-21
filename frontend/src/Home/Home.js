@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Header from '../Templates/Header';
 import Footer from '../Templates/Footer';
 import Search from '../Templates/Search';
+// import TestSearchBar from '../Templates/TestSearchBar';
 import TopFood from './TopFood';
 import TopRestaurant from './TopRestaurant';
 
@@ -15,6 +16,7 @@ class Home extends Component {
             <div className="bgnormal">
             <Header/>
             <Search />
+            {/* <TestSearchBar/> */}
             <div className="container">
                 {/* Top Section*/}
                 <div className="row">

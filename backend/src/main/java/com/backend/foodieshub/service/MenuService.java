@@ -18,23 +18,23 @@ public class MenuService {
     private FoodCategoryRepository foodCategoryRepository;
     private FoodTypeRepository foodTypeRepository;
 
-    //GET METHOD------------------------------
-    public List<Menu> getAllMenu(){
+    // GET METHOD------------------------------
+    public List<Menu> getAllMenu() {
         return menuRepository.findAll();
     }
-    
-    //POST METHOD------------------------------------------
-    public void saveMenu(Menu menu){
+
+    // POST METHOD------------------------------------------
+    public void saveMenu(Menu menu) {
         menuRepository.save(menu);
     }
 
-    //DELETE METHOD---------------------
-    public void deleteMenu(int id){
+    // DELETE METHOD---------------------
+    public void deleteMenu(int id) {
         menuRepository.deleteById(id);
     }
 
-    //UPDATE METHOD----------------
-    public void updateMenu(Menu menu){
+    // UPDATE METHOD----------------
+    public void updateMenu(Menu menu) {
         menuRepository.save(menu);
     }
 }
