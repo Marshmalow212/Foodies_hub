@@ -6,10 +6,10 @@
   border-radius: 6px;
   display: flex;
   background: white;
-  width: 60%;
+  width: 55%;
   margin-left: 30px;
-  height: 55px;
-  /* border: 1px solid rgb(88, 88, 88); */
+  height: 60px;
+  border: 1px solid rgb(179, 179, 179);
 }
 .Sinput {
   border-radius: 6px;

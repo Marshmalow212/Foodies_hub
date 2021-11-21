@@ -7,6 +7,7 @@ import TopFood from './TopFood';
 import TopRestaurant from './TopRestaurant';
 import HomeFeeds from './HomeFeeds';
 import RightNavigation from './RightNavigation';
+import Cart from '../Templates/Cart';
 import "./Home.css"
 // import "../img/home-background.png"
 
@@ -17,7 +18,7 @@ class Home extends Component {
     }
     render() { 
         return ( 
-            <div className="bgnormal">
+            <div className="bgnormal" style={{position: "relative"}}>
                 <Header/>
                 
                 <div className="sec-1">
@@ -27,18 +28,19 @@ class Home extends Component {
                     </div>
                     <TestSearchBar/>
                     {/* <Search /> */}
+                    <Cart/>
                 </div>
                 
             <div className="container" style={{height:"100vh"}}>
                 {/* Top Section*/}
                 <div className="row">
                     <div className="col-sm-6 ">
-                    <div className="display-5 bg-success my-md-2 text-light ">Top Food</div>
+                    <div className="display-5 my-md-2 text-dark ">Top Food</div>
                         {/* Top Food Section */}
                         <TopFood />
                     </div>
                     <div className="col-sm-6 ">
-                    <div className="display-5 bg-success my-md-2 text-light ">Top Restaurant</div>
+                    <div className="display-5 my-md-2 text-dark ">Top Restaurant</div>
                         {/* Top Restaurant Section */}
                         <TopRestaurant />
                     </div>
@@ -46,8 +48,8 @@ class Home extends Component {
                 
             </div>
 
-            <div className="">
-                <div className="display-4 bg-success my-md-2 mx-md-2 text-light ">Feeds</div>
+            <div className="FeedText">
+                <div className="display-4 my-md-2 mx-md-2 text-dark">Foodies <span style={{color:"#ffff",background:"#285954"}}>Feeds</span></div>
             </div>
 
             <div className="3rd-section" style={{display:"flex"}}>

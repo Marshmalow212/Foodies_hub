@@ -2,13 +2,23 @@
   padding-top: 12%;
   margin-left: 30px;
 }
+.FeedText {
+  margin-left: 30px;
+  /* text-align: center; */
+}
+span {
+  border-radius: 5px;
+  padding: 0 5px;
+}
 .sec-1 {
   height: 85vh;
   background-image: url(../img/home_background.png);
+  /* filter: blur(8px); */
+  /* -webkit-filter: blur(8px); */
   /* background-size: 10px; */
   /* height: 10px; */
   background-position: right bottom;
-  background-size: 600px;
+  background-size: 550px;
   background-repeat: no-repeat;
   /* background: linear-gradient(white, grey); */
   padding-left: 10px;
