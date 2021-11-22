@@ -9,7 +9,6 @@ import HomeFeeds from './HomeFeeds';
 import RightNavigation from './RightNavigation';
 import Cart from '../Templates/Cart';
 import "./Home.css"
-// import "../img/home-background.png"
 
 class Home extends Component {
     constructor(props) {
@@ -52,7 +51,7 @@ class Home extends Component {
                 <div className="display-4 my-md-2 mx-md-2 text-dark">Foodies <span style={{color:"#ffff",background:"#285954"}}>Feeds</span></div>
             </div>
 
-            <div className="3rd-section" style={{display:"flex"}}>
+            <div className="sec-3" style={{display:"flex"}}>
                 <div className="RightFeeds" style={{width:"55%"}} >
                     <HomeFeeds/>
                     <HomeFeeds/>
