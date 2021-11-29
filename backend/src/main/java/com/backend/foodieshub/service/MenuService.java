@@ -1,5 +1,7 @@
 package com.backend.foodieshub.service;
 
+import com.backend.foodieshub.model.FoodCategory;
+import com.backend.foodieshub.model.FoodType;
 import com.backend.foodieshub.repository.FoodCategoryRepository;
 import com.backend.foodieshub.repository.FoodTypeRepository;
 import com.backend.foodieshub.repository.MenuRepository;
@@ -15,7 +17,9 @@ import java.util.List;
 public class MenuService {
     @Autowired
     private MenuRepository menuRepository;
+    @Autowired
     private FoodCategoryRepository foodCategoryRepository;
+    @Autowired
     private FoodTypeRepository foodTypeRepository;
 
     // GET METHOD------------------------------
@@ -36,5 +40,24 @@ public class MenuService {
     // UPDATE METHOD----------------
     public void updateMenu(Menu menu) {
         menuRepository.save(menu);
+    }
+    
+//    food type post 
+    public void saveFoodType(FoodType foodType){
+        foodTypeRepository.save(foodType);
+    }
+//    food type get list
+    public List<FoodType> getFoodType(){
+        return foodTypeRepository.findAll();
+    }
+    
+//    food category post
+    public void saveFoodCategory(FoodCategory foodCategory){
+        foodCategoryRepository.save(foodCategory);
+    }
+    
+//    food category get list
+    public List<FoodCategory> getFoodCategory(){
+        return foodCategoryRepository.findAll();
     }
 }

@@ -50,6 +50,7 @@ class CartItemCard extends Component {
                   </div>
                   <div className="col-md-3">
                       <p className="cart-item-amount pt-2 pb-2 text-center">{this.state.item_price} $</p>
+                      {/* increase or decrease the amount of the item */}
                       <div className="item-counter text-center">
                           <button onClick={(e)=>{this.amountCalculatePlus();}} className="btn btn-sm item-card-btn rounded-circle btn-success" type="button">+</button> {this.state.item_count} <button onClick={(e)=>{this.amountCalculateMinus();}} className="btn btn-sm item-card-btn rounded-circle btn-danger" type="button">-</button>
                        </div>
