@@ -6,6 +6,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter as BRouter,Switch,Route} from 'react-router-dom';
 import Router from './Router';
+// import Icoons from 'react-icons/all';
 
 ReactDOM.render(
   <BRouter>

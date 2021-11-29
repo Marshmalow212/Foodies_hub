@@ -7,7 +7,7 @@ import TopFood from './TopFood';
 import TopRestaurant from './TopRestaurant';
 import HomeFeeds from './HomeFeeds';
 import RightNavigation from './RightNavigation';
-import Cart from '../Templates/Cart';
+import Cart from '../Templates/CartButton';
 import "./Home.css"
 
 class Home extends Component {

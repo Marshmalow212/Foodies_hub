@@ -1,41 +1,60 @@
 import React, { Component } from 'react';
-import {Modal,ModalBody,ModalHeader} from 'reactstrap';
+import { Modal, ModalBody, ModalHeader } from 'reactstrap';
 import CartItemCard from '../Templates/CartItemCard';
+import CartModal from '../Templates/CartModal';
+import foodmedia from '../img/upfood.jpg';
 
 class Cart extends Component {
     constructor(props) {
         super(props);
 
-        this.state={
-            pageProperty:{
-                leftBtn:"Confirm",
-                rightBtn:"Return",
-                mainTitle:"Order Cart"
-            }
+        this.state = {
+            pageProperty: {
+                leftBtn: "Confirm",
+                rightBtn: "Return",
+                mainTitle: "Order Cart"
+            },
+            itemList: [{
+                item_price: 15.29,
+                item_count: 0,
+                total_price: 0,
+                item_name: "Kala bhuna",
+                item_description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat sint molestias voluptatum quae, magni voluptas nesciunt,temporibus.",
+                item_media: foodmedia
+            },
+            {
+                item_price: 15.29,
+                item_count: 0,
+                total_price: 0,
+                item_name: "Kala bhuna",
+                item_description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat sint molestias voluptatum quae, magni voluptas nesciunt,temporibus.",
+                item_media: foodmedia
+            },
+            {
+                item_price: 18.90,
+                item_count: 0,
+                total_price: 0,
+                item_name: "Beef buna",
+                item_description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat sint molestias voluptatum quae, magni voluptas nesciunt,temporibus.",
+                item_media: foodmedia
+            },
+            {
+                item_price: 15.29,
+                item_count: 0,
+                total_price: 0,
+                item_name: "Kala bhuna",
+                item_description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat sint molestias voluptatum quae, magni voluptas nesciunt,temporibus.",
+                item_media: foodmedia
+            }]
+
         }
-        
+
     }
 
     render() {
-        
+
         return (
-            <Modal isOpen={true}  >
-                <div id="order-cart">
-                    <div className="display-6 text-center p-2 text-light">{this.state.pageProperty.mainTitle}</div>
-                    <div className="cart-item-list">
-                    <CartItemCard />
-                    <CartItemCard />
-                    <CartItemCard />
-                    <CartItemCard />   
-                    {this.state.listthem}                     
-                    </div>
-                    <div className="mt-2 mb-2 d-flex justify-content-end order-cart-btn">
-                        <div className=""><button type="button" className="btn">{this.state.pageProperty.leftBtn}</button></div>
-                        <div className=""><button type="button" className="btn">{this.state.pageProperty.rightBtn}</button></div>
-                    </div>
-                </div>
-                
-            </Modal>
+            <CartModal bodydata={this.state.pageProperty} itemdata={this.state.itemList} />
         );
     }
 }
