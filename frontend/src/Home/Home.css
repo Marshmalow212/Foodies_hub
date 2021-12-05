@@ -4,6 +4,7 @@
 }
 .FeedText {
   margin-left: 100px;
+  margin-top: 50px;
   /* text-align: center; */
 }
 span {
@@ -24,6 +25,8 @@ span {
   padding-left: 10px;
   padding-right: 10px;
   /* opacity: 0.5; */
+  box-shadow: 0 3px 3px 0 rgba(255, 225, 179, 0.952),
+    0 1px 1px 0 rgba(255, 237, 189, 0.952);
 }
 .sec-3 {
   margin-left: 80px;

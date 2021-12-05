@@ -8,24 +8,33 @@ import TopRestaurant from './TopRestaurant';
 import HomeFeeds from './HomeFeeds';
 import RightNavigation from './RightNavigation';
 import Cart from '../Templates/Cart';
+import UserSign from '../Roles/UserSign';
 import "./Home.css"
 
 class Home extends Component {
     constructor(props) {
         super(props);
-        this.state = {  }
+        this.state = { 
+
+        }
     }
-    render() { 
+
+    render() {
         return ( 
             <div className="bgnormal" style={{position: "relative"}}>
                 <Header/>
+                {console.log(this.props.recv)}
+                {/* {this.props.recv===true?<UserSign/>:""} */}
+                <UserSign/>
                 
                 <div className="sec-1">
                     <div className="HomeIntro">
-                        <h1>Foodies Hub</h1>
-                        <h4>Food Searching, Ordering and Community System</h4>
+                        <h1>Foodies <span style={{color:"#285954"}}>Hub</span></h1>
+                        <h5 style={{color:"#212121"}}>Find your favourite Food or Restaurant &</h5>
+                        <h5 style={{color:"#212121"}}>Order your desired food item.</h5>
+                        <h5 style={{color:"#212121"}}>Share your experience and connect with people</h5>
                     </div>
-                    <TestSearchBar/>
+                    <TestSearchBar/> 
                     {/* <Search /> */}
                     <Cart/>
                 </div>

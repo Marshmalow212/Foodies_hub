@@ -2,8 +2,10 @@ import React, { Component } from 'react';
 import Header from '../Templates/Header';
 import Footer from '../Templates/Footer';
 import Search from './../Templates/Search';
+// import TestSearchBar from './../Templates/TestSearchBar';
 import imag from "./../img/upimage.jpg";
 import RestaurantInfoModal from './RestaurantInfoModal';
+import './Restaurant.css'
 
 class Restaurant extends Component {
     constructor(props) {
@@ -48,6 +50,7 @@ class Restaurant extends Component {
                 {/* Restaurant Details modal on off */}
                 {this.state.showmodal?<RestaurantInfoModal closeModal={this.replace} />:""}
                 
+                <div className="sec-content">
                 <div className="container my-sm-2">
 
                     <div className="row">
@@ -84,6 +87,7 @@ class Restaurant extends Component {
                     
 
 
+                </div>
                 </div>
                 <Footer />
 

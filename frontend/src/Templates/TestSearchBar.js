@@ -6,7 +6,7 @@ function TestSearchBar() {
     return (
         <div className="SearchBar">
             <div className="Srow">
-                <input className="Sinput" type="text"/>
+                <input className="Sinput" type="text" placeholder=" Search here..."/>
                 <select className="Sfilter">
                     <option>option1</option>
                     <option>option2</option>

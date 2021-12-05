@@ -11,12 +11,12 @@ function HomeFeeds() {
               <div className="Reactions">
                   <div className="LeftReaction">
                       <BiLike/>
-                      <div ClassName="LCounter">100</div>
+                      <div className="LCounter">100</div>
                   </div>
                   <div className="Seperator"></div>
                   <div className="RightReaction">
                       <BiDislike/>
-                      <div ClassName="DCounter">9</div>
+                      <div className="DCounter">9</div>
                   </div>
               </div>
           </div>  

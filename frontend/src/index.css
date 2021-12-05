@@ -1,3 +1,7 @@
+:root {
+  --alpha-color: rgba(255, 225, 179, 0.952);
+  --beta-color: #285954;
+}
 .bgnormal {
   /* background: rgba(0, 184, 148, 1); */
   background: #fff2de;
