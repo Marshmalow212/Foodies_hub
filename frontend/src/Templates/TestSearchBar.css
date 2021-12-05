@@ -3,15 +3,16 @@
   margin-bottom: 100px;
 }
 .Srow {
-  border-radius: 6px;
+  border-radius: 8px;
   display: flex;
   background: white;
   width: 55%;
   margin-left: 30px;
   height: 60px;
-  border: 1px solid rgb(179, 179, 179);
+  border: 2px solid #285954;
 }
 .Sinput {
+  padding-left: 8px;
   border-radius: 6px;
   width: 70%;
   border: none;
