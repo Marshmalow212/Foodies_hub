@@ -24,4 +24,4 @@ function HomeFeeds() {
     )
 }
 
-export default HomeFeeds
+export default HomeFeeds;

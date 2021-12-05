@@ -7,6 +7,9 @@ import Restaurant from './Restaurant/Restaurant';
 import RestaurantInfoModal from './Restaurant/RestaurantInfoModal';
 import Food from './Food/Food';
 import RestaurateurSign from'./Roles/RestaurateurSign';
+import CartItemCard from './Templates/CartItemCard';
+import Cart from './Order/Cart';
+import OrderConfirmation from './Order/OrderConfirmation';
 
 const Router = ()=> {
         return ( 
@@ -18,7 +21,9 @@ const Router = ()=> {
             <Route exact path={'/food'} component={Food}></Route>
             <Route exact path={'/modalrestaurant'} component={RestaurantInfoModal}></Route>
             <Route exact path={'/restaurateur'} component={RestaurateurSign}></Route>
-            
+            <Route exact path={'/item-card'} component={CartItemCard}></Route>
+            <Route exact path={'/cart'} component={Cart}></Route>
+            <Route exact path={'/order-confirmation'} component={OrderConfirmation}></Route>
             </Switch>
             
             

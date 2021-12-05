@@ -1,5 +1,7 @@
 package com.backend.foodieshub.controller;
 
+import com.backend.foodieshub.model.FoodCategory;
+import com.backend.foodieshub.model.FoodType;
 import com.backend.foodieshub.model.Menu;
 import com.backend.foodieshub.service.MenuService;
 
@@ -14,6 +16,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 
 import java.util.List;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 
 @RestController
 // @CrossOrigin(origins = "localhost:5001")
@@ -22,9 +27,11 @@ public class MenuController {
     @Autowired
     private MenuService menuService;
 
+//    Menu Controllers
     @PostMapping("/menu")
-    public void addMenu(@RequestBody Menu menu) {
+    public ResponseEntity<Object> addMenu(@RequestBody Menu menu) {
         menuService.saveMenu(menu);
+        return new ResponseEntity("Menu Added\n"+menu,HttpStatus.OK);
     }
 
     @RequestMapping("/menu")
@@ -41,4 +48,29 @@ public class MenuController {
     public void deleteMenu(@PathVariable int id) {
         menuService.deleteMenu(id);
     }
+    
+    
+//    Food Category & Food Type Controlers
+    
+    @PostMapping("foodcategory")
+    public ResponseEntity<Object> sendFoodCategory(@RequestBody FoodCategory foodCategory){
+        menuService.saveFoodCategory(foodCategory);
+        return new ResponseEntity("Food Category updated\n"+foodCategory,HttpStatus.OK);
+    }  
+    @PostMapping("foodtype")
+    public ResponseEntity<Object> sendFoodType(@RequestBody FoodType foodType){
+        menuService.saveFoodType(foodType);
+        return new ResponseEntity("Food Category updated\n"+foodType,HttpStatus.OK);
+    }  
+    
+    @GetMapping("foodtype")
+    public List<FoodType> receiveFoodType(){
+        return menuService.getFoodType();
+    }
+    @GetMapping("foodcategory")
+    public List<FoodCategory> receiveFoodCategory(){
+        return menuService.getFoodCategory();
+    }
+    
+    
 }

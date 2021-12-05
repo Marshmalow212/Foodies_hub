@@ -2,7 +2,7 @@ import React from 'react'
 import "./Cart.css"
 import { BsCart3 } from "react-icons/bs";
 
-function Cart() {
+function CartButton() {
     return (
             <div className="cart-box">
                 <div className="cart-icon">
@@ -12,4 +12,4 @@ function Cart() {
     )
 }
 
-export default Cart
+export default CartButton;
