@@ -9,13 +9,18 @@ class OrderConfirmation extends Component {
                 leftBtn: "Check Out",
                 rightBtn: "Return",
                 mainTitle: "Order Confirmation"
+            },
+            orderData:{
+                order_item_count:5,
+                order_summary:'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sunt doloribus velit inventore, laborum maxime magnam recusandae, blanditiis repudiandae necessitatibus expedita cumque ut esse illo harum deserunt voluptate delectus, dolores tempore. Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt tenetur nihil optio repudiandae ut consequatur laboriosam quidem alias, illo hic, quam tempora porro perferendis autem accusantium tempore ea, architecto a.',
+                order_total_amount:123.34 
             }
         };
     }
     
     render() {
         return (
-            <CartModal bodydata={this.state.pageProperty} />
+            <CartModal bodydata={this.state.pageProperty}  />
         );
     }
 }

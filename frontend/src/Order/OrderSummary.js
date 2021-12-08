@@ -21,12 +21,12 @@ class OrderSummary extends Component {
                          <p className="list-inline-item">{this.state.order_item_count}</p>
                      </div>
                      <div className="list-inline-block ">
-                         <p className="list-inline-item lh-1">{this.state.order_summary} Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sunt doloribus velit inventore, laborum maxime magnam recusandae, blanditiis repudiandae necessitatibus expedita cumque ut esse illo harum deserunt voluptate delectus, dolores tempore. Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt tenetur nihil optio repudiandae ut consequatur laboriosam quidem alias, illo hic, quam tempora porro perferendis autem accusantium tempore ea, architecto a.</p>
+                         <p className="list-inline-item lh-1">{this.state.order_summary} </p>
                      </div>
                  </div> 
                  <div className="col-md-4 text-center ">
                      <p>Total Amount</p>
-                     <p>{this.state.order_total_amount} $</p>
+                     <p>{this.state.order_total_amount} &dollar;</p>
                      </div>                
                 </div> 
                                 
