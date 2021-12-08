@@ -10,6 +10,7 @@ import RestaurateurSign from'./Roles/RestaurateurSign';
 import CartItemCard from './Templates/CartItemCard';
 import Cart from './Order/Cart';
 import OrderConfirmation from './Order/OrderConfirmation';
+import CheckOut from './Delivery/CheckOut';
 
 const Router = ()=> {
         return ( 
@@ -24,6 +25,7 @@ const Router = ()=> {
             <Route exact path={'/item-card'} component={CartItemCard}></Route>
             <Route exact path={'/cart'} component={Cart}></Route>
             <Route exact path={'/order-confirmation'} component={OrderConfirmation}></Route>
+            <Route exact path={'/checkout'} component={CheckOut}></Route>
             </Switch>
             
             
