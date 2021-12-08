@@ -13,7 +13,7 @@ class OrderSummary extends Component {
     
     render() {
         return (
-            <div id="ordersummary" className="">
+            <div id="ordersummary" className="container">
                <div className="d-flex ordersummarybody ">
                  <div className="col-md-8 ">
                      <div className="list-inline-block ">
@@ -21,12 +21,13 @@ class OrderSummary extends Component {
                          <p className="list-inline-item">{this.state.order_item_count}</p>
                      </div>
                      <div className="list-inline-block ">
-                         <p className="list-inline-item lh-1">{this.state.order_summary} </p>
+                         <p className="list-inline-item lh-2">Item Summary : </p>
+                         <p className="list-inline-item lh-1 overflow-auto ordersummarylist ">{this.state.order_summary} </p>
                      </div>
                  </div> 
                  <div className="col-md-4 text-center ">
                      <p>Total Amount</p>
-                     <p>{this.state.order_total_amount} &dollar;</p>
+                     <p>{this.state.order_total_amount} $</p>
                      </div>                
                 </div> 
                                 

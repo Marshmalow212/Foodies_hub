@@ -11,12 +11,14 @@ import CartItemCard from './Templates/CartItemCard';
 import Cart from './Order/Cart';
 import OrderConfirmation from './Order/OrderConfirmation';
 import CheckOut from './Delivery/CheckOut';
+import DeliverySummary from './Delivery/DeliverySummary';
 
 const Router = ()=> {
         return ( 
             <Switch>
-            <Route exact path={'/test'} component={Test}></Route>
+            {/* <Route exact path={'/test'} component={Test}></Route> */}
             {/* <Route exact path={'/'} component={App}></Route> */}
+            <Route exact path={'/dev'} component={DeliverySummary}></Route>
             <Route exact path={'/'} component={Home}></Route>
             <Route exact path={'/restaurant'} component={Restaurant}></Route>
             <Route exact path={'/food'} component={Food}></Route>

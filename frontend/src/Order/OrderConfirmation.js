@@ -10,7 +10,7 @@ class OrderConfirmation extends Component {
                 rightBtn: "Return",
                 mainTitle: "Order Confirmation"
             },
-            orderData:{
+            orderList:{
                 order_item_count:5,
                 order_summary:'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sunt doloribus velit inventore, laborum maxime magnam recusandae, blanditiis repudiandae necessitatibus expedita cumque ut esse illo harum deserunt voluptate delectus, dolores tempore. Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt tenetur nihil optio repudiandae ut consequatur laboriosam quidem alias, illo hic, quam tempora porro perferendis autem accusantium tempore ea, architecto a.',
                 order_total_amount:123.34 
@@ -20,7 +20,7 @@ class OrderConfirmation extends Component {
     
     render() {
         return (
-            <CartModal bodydata={this.state.pageProperty}  />
+            <CartModal bodydata={this.state.pageProperty} orderdata={this.state.orderList}  />
         );
     }
 }

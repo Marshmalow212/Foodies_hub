@@ -42,7 +42,7 @@ a {
 
 /* order cart item styles */
 #cart-item-card .item-card-body{
-  background: #8DEB6C;
+  background: #ebbab7;
   /* color: #E9F5F3; */
 
   height: 20%;
@@ -73,13 +73,13 @@ a {
 /* order cart body styles */
 
 #order-cart{
-  background:rgba(46, 154, 89, 1) ;
-  padding: 0.5rem;
+  background:rgb(214, 117, 26) ;
+  padding: 1.5rem;
 }
 #order-cart .cart-item-list{
   max-height: 30rem;
   overflow: auto;
-  background: rgb(107, 177, 134);
+  background: rgb(250, 227, 177);
   
 }
 #order-cart .order-cart-btn div{
@@ -87,7 +87,48 @@ a {
 }
 #order-cart .order-cart-btn div button{
   margin: auto;
-  background: rgba(146, 242, 156, 1);
+  background: rgb(146, 242, 232);
   font-size: 1rem;
   
+}
+
+/* order confirmation styles */
+
+#ordersummary .ordersummarylist{
+  height: 10rem;
+}
+
+
+#order-cart .order-confirmation-info{
+  background: rgb(250, 227, 177);
+  color: rgb(21, 44, 65);
+  font-weight: 2rem;
+  padding: .5rem;
+  /* height: 15rem; */
+  /* overflow: hidden; */
+}
+
+/* delivery vendors item styles */
+#deliveryvendors .deliveryvendorsbody button{
+  height: 8rem;
+}
+
+/* delivery summary styles */
+
+#deliverysummary .deliverysummaryinfo{
+  line-height: 0.8rem;
+  /* font-weight: 2rem; */
+}
+
+/* payment vendors styles */
+#paymentvendors .paymentvendorsbody button{
+  height: 8rem;
+  width: 6rem;
+}
+
+#checkoutinfo{
+  background: rgb(250, 227, 177);
+  color: rgb(21, 44, 65);
+  font-weight: 2rem;
+  padding: .5rem;
 }
