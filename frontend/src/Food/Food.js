@@ -4,6 +4,7 @@ import Footer from '../Templates/Footer';
 import Search from '../Templates/Search';
 import imag from "./../img/upfood.jpg";
 import FoodInfoModal from './FoodInfoModal';
+import CartButton from '../Templates/CartButton';
 
 class Food extends Component {
     constructor(props) {
@@ -45,6 +46,7 @@ class Food extends Component {
             <div className="bgnormal">
                 <Header />
                 <Search />
+                <CartButton />
                 {this.state.showmodal?<FoodInfoModal closeModal={this.replace} />:""}
                 
                 <div className="container my-sm-2">

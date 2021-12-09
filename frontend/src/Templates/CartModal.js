@@ -63,6 +63,12 @@ function CartModal(props) {
         else if(state.confirmList){
             history.push('/order-confirmation');
         }
+        else if(state.itemList){
+            let lastPath = sessionStorage.getItem('lastpath');
+            // console.log(lastPath);
+            history.push(lastPath);
+            sessionStorage.removeItem('lastpath');
+        }
     }
 
 

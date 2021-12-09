@@ -6,6 +6,7 @@ import Search from './../Templates/Search';
 import imag from "./../img/upimage.jpg";
 import RestaurantInfoModal from './RestaurantInfoModal';
 import './Restaurant.css'
+import CartButton from '../Templates/CartButton';
 
 class Restaurant extends Component {
     constructor(props) {
@@ -47,6 +48,7 @@ class Restaurant extends Component {
             <div className="bgnormal">
                 <Header />
                 <Search />
+                <CartButton/>
                 {/* Restaurant Details modal on off */}
                 {this.state.showmodal?<RestaurantInfoModal closeModal={this.replace} />:""}
                 

@@ -7,8 +7,8 @@ import TopFood from './TopFood';
 import TopRestaurant from './TopRestaurant';
 import HomeFeeds from './HomeFeeds';
 import RightNavigation from './RightNavigation';
-import Cart from '../Templates/CartButton';
 import "./Home.css"
+import CartButton from '../Templates/CartButton';
 
 class Home extends Component {
     constructor(props) {
@@ -40,7 +40,9 @@ class Home extends Component {
                     </div>
                     <TestSearchBar />
                     {/* <Search /> */}
-                    <Cart />
+
+                    {/* cart floating button */}
+                    <CartButton />
                 </div>
 
                 <div className="container" style={{ height: "100vh" }}>
