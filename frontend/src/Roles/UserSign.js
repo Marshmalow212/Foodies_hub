@@ -10,7 +10,6 @@ function UserSign() {
     };
 
     return (
-        <div>
             <div className="user-sign-container">
                 <div className="bloc-tabs">
                     <button
@@ -52,7 +51,6 @@ function UserSign() {
                     </div>
                 </div>
             </div>
-        </div>
     )
 }
 

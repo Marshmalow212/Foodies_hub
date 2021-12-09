@@ -46,3 +46,8 @@ a:hover:after {
   font-size: 21px;
   margin-right: 15px;
 }
+
+/* user sign modal styles */
+.user-sign-modal{
+  background:rgba(255, 188, 43, 0);
+}
