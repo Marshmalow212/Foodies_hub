@@ -52,6 +52,8 @@ function CartModal(props) {
             setTimeout(() => {
                 setPayDone(false);                
             }, 2000);
+
+            
         }
         
     }
