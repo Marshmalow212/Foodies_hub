@@ -12,6 +12,7 @@ import Cart from './Order/Cart';
 import OrderConfirmation from './Order/OrderConfirmation';
 import CheckOut from './Delivery/CheckOut';
 import DeliverySummary from './Delivery/DeliverySummary';
+import FileUpload from './Testing/FileUpload';
 
 const Router = ()=> {
         return ( 
@@ -28,6 +29,7 @@ const Router = ()=> {
             <Route exact path={'/cart'} component={Cart}></Route>
             <Route exact path={'/order-confirmation'} component={OrderConfirmation}></Route>
             <Route exact path={'/checkout'} component={CheckOut}></Route>
+            <Route exact path={'/fileupload'} component={FileUpload}></Route>
             </Switch>
             
             
