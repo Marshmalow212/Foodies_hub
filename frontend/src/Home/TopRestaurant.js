@@ -35,30 +35,7 @@ class TopRestaurant extends Component {
                             </p>
                         </div>                      
                    </div>
-                   <div className="d-md-flex flex-row justify-content-between mt-sm-1">
-                    <div className="card card-body  m-1">
-                            <img className="" src={restaurant} alt="food" id="topimage"/>
-                            <label htmlFor="" className="blockquote mt-sm-2 fs-5">{restaurantName}</label>
-                            <label htmlFor="" className="blockquote-footer ">Coders Cafe</label>
-                            <p className="text-justify text-truncate">{descrip}
-                            </p>
-                        </div>
-                        <div className="card card-body m-1 ">
-                            <img className="" src={restaurant} alt="food" id="topimage"/>
-                            <label htmlFor="" className="blockquote mt-sm-2 fs-5">{restaurantName}</label>
-                            <label htmlFor="" className="blockquote-footer ">Coders Cafe</label>
-                            <p className="text-justify text-truncate">{descrip}
-                            </p>
-                        </div>
-                        <div className="card card-body m-1 ">
-                            <img className="" src={restaurant} alt="food" id="topimage"/>
-                            <label htmlFor="" className="blockquote mt-sm-2 fs-5">{restaurantName}</label>
-                            <label htmlFor="" className="blockquote-footer ">Coders Cafe</label>
-                            <p className="text-justify text-truncate">{descrip}
-                            </p>
-                        </div>                      
-                   </div>                        
-               
+                   
             </div>
          );
     }
