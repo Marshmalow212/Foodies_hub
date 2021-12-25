@@ -1,33 +1,61 @@
 import React from 'react'
 import "./RestaurateurDashboard.css"
-import {BrowserRouter as RRouter,Switch,Route,Link} from 'react-router-dom';
+import {BrowserRouter as RRouter,Switch,Route,Link,useHistory} from 'react-router-dom';
 import RestaurantInfo from './Restaurateur/RestaurantInfo';
 import RestaurantMenu from './Restaurateur/RestaurantMenu';
 
-export default function RestaurateurDashboard() {
+// const routes = [
+//     {
+//       path: "/resProfile",
+//       exact: true,
+//       main: () => <RestaurantInfo/>
+//     },
+//     {
+//       path: "/resProfile/rmenu",
+//       main: () => <RestaurantMenu/>
+//     }
+// ];
+
+export default function RestaurateurDashboard({match}) {
+
+    // let { path, url } = useRouteMatch();
+    // console.log(match);
+    // console.log(history);
+    // console.log(location);
+    // const history = useHistory();
+
     return (
         <div>
             <div className="profile-section">
             <RRouter>
                 <div className="left-side">
-                    <h4>Foodies Hub</h4>
+                    <h4 style={{padding:"5px 5px 20px 10px"}}>Foodies Hub</h4>
                     <div className="DashboardNav">
-                        <div><Link to="/restaurateur/rinfo">Information</Link></div>
-                        <div><Link to="/restaurateur/rmenu">Menu</Link></div>
+                        {/* <div className='individual-nav'><Link to="/resProfile/rinfo">Profile</Link></div> */}
+                        {/* <div className='individual-nav'><Link to="/resProfile/rmenu">Menu</Link></div> */}
+                        <ul className='r-dbord-nav-ul'>
+                            <li className='individual-nav'>
+                                <Link to={`${match.path}`} style={{color:"white"}}>Profile</Link>
+                            </li>
+                            <li className='individual-nav'>
+                                <Link to={`${match.path}/rmenu`} style={{color:"white"}}>Menu</Link>
+                            </li>
+                        </ul>
                     </div>
                 </div>
 
                 <div className="right-side">
-
-                    <Switch>
-                        <Route path={"/restaurateur/rinfo"}>
-                            <RestaurantInfo/>
-                        </Route>
-                        <Route path={"/restaurateur/rmenu"}>
-                            <RestaurantMenu/>
-                        </Route>
-                    </Switch>
-                
+                    <div className="right-side-content">
+                        <Switch>
+                            <Route
+                                exact path={`${match.path}`}
+                                component={RestaurantInfo}
+                            >
+                            </Route>
+                            <Route exact path={`${match.path}/rmenu`} component={RestaurantMenu}></Route>
+            
+                        </Switch>
+                    </div>
                 </div>
               </RRouter>
             </div>

@@ -2,17 +2,21 @@
   background: linear-gradient(rgba(255, 225, 179, 0.952), white);
 }
 .r-heading {
-  margin: 10px 10px 30px 10px;
+  background: rgba(255, 243, 225, 0.952);
+  margin: 0px 0 20px 0px;
   padding: 10px;
   text-align: center;
+  -webkit-box-shadow: 0 8px 10px -6px #3b3b3b;
+  -moz-box-shadow: 0 8px 10px -6px #3b3b3b;
+  box-shadow: 0 8px 10px -9px #3b3b3b;
 }
 .vl {
-  background: black;
+  background: rgb(146, 146, 146);
   width: 1px;
   margin: 20px 0 20px 0;
 }
 .r-body {
-  border: 1px solid black;
+  /* border: 1px solid black; */
   margin: auto;
   width: 80%;
   justify-content: space-around;
@@ -23,15 +27,16 @@
   width: 40%;
   padding: 10px;
   margin: 10px;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   border-radius: 5px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 .r-input {
   padding-left: 10px;
   width: 90%;
   margin: 5px 0 10px 0;
   border-radius: 5px;
-  border: 1px solid black;
+  border: 1px solid rgba(134, 101, 50, 0.952);
   height: 40px;
 }
 .r-btn {
@@ -40,4 +45,14 @@
   border-radius: 5px;
   background: var(--beta-color);
   color: white;
+}
+.resSignImg {
+  padding: 10px;
+  margin-top: 20px;
+  height: 200px;
+  width: 100%;
+}
+.resSignImg img {
+  height: 100%;
+  width: 100%;
 }
