@@ -1,8 +1,8 @@
 package com.backend.foodieshub.controller;
 
-import com.backend.foodieshub.model.FoodCategory;
-import com.backend.foodieshub.model.FoodType;
-import com.backend.foodieshub.model.Menu;
+import com.backend.foodieshub.model.FoodRestaurant.FoodCategory;
+import com.backend.foodieshub.model.FoodRestaurant.FoodType;
+import com.backend.foodieshub.model.FoodRestaurant.Menu;
 import com.backend.foodieshub.service.MenuService;
 
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,4 +1,4 @@
-package com.backend.foodieshub.model;
+package com.backend.foodieshub.model.FoodRestaurant;
 
 import java.io.Serializable;
 import javax.persistence.Entity;

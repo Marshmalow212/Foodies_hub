@@ -18,6 +18,8 @@ class Home extends Component {
         }
     }
 
+    
+
     render() {
 
         // home feeds generating

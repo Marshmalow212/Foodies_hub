@@ -1,6 +1,6 @@
 package com.backend.foodieshub.controller;
 
-import com.backend.foodieshub.model.Restaurant;
+import com.backend.foodieshub.model.FoodRestaurant.Restaurant;
 import com.backend.foodieshub.service.RestaurantService;
 
 import org.springframework.beans.factory.annotation.Autowired;

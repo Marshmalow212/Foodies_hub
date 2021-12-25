@@ -1,7 +1,7 @@
 package com.backend.foodieshub.service;
 
-import com.backend.foodieshub.model.FoodCategory;
-import com.backend.foodieshub.model.FoodType;
+import com.backend.foodieshub.model.FoodRestaurant.FoodCategory;
+import com.backend.foodieshub.model.FoodRestaurant.FoodType;
 import com.backend.foodieshub.repository.FoodCategoryRepository;
 import com.backend.foodieshub.repository.FoodTypeRepository;
 import com.backend.foodieshub.repository.MenuRepository;
@@ -9,7 +9,7 @@ import com.backend.foodieshub.repository.MenuRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.backend.foodieshub.model.Menu;
+import com.backend.foodieshub.model.FoodRestaurant.Menu;
 
 import java.util.List;
 
