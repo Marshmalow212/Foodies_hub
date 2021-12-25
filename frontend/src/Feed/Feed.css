@@ -1,6 +1,6 @@
 .feed-container {
-  background: rgb(231, 231, 231);
-  /* background: var(--alpha-color); */
+  /* background: rgb(231, 231, 231); */
+  background: #fff2de;
   overflow: hidden;
 }
 

@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import fhlogo from "../fh_logo.png"
+import fhlogo from "../fh_logo_white.png"
 import "./Header.css"
 import { CgProfile } from "react-icons/cg";
-import { GrNotification } from "react-icons/gr";
+import { MdNotifications } from "react-icons/md";
 import UserSign from '../Roles/UserSign';
 import Home from '../Home/Home';
 import { Modal, ModalBody } from 'reactstrap';
@@ -57,14 +57,14 @@ class Header extends Component {
                     <nav className="navbar navbar-expand-lg">
                         <a href="#" className="fhlogo" ><img src={fhlogo} alt="logo" width="23" height="25" /></a>
                         <ul className="nav me-auto mb-2 mb-lg-0 mr-2 ">
-                            <li className="nav-item "><a href="/" className="nav-link text-dark">Home</a></li>
-                            <li className="nav-item "><a href="#" className="nav-link text-dark">Community</a></li>
-                            <li className="nav-item "><a href="/restaurant" className="nav-link text-dark">Restaurant</a></li>
-                            <li className="nav-item "><a href="/food" className="nav-link text-dark">Food</a></li>
-                            <li className="nav-item "><a href="#" className="nav-link text-dark">Contact</a></li>
+                            <li className="nav-item "><a href="/" className="nav-link text-light">Home</a></li>
+                            <li className="nav-item "><a href="#" className="nav-link text-light">Community</a></li>
+                            <li className="nav-item "><a href="/restaurant" className="nav-link text-light">Restaurant</a></li>
+                            <li className="nav-item "><a href="/food" className="nav-link text-light">Food</a></li>
+                            <li className="nav-item "><a href="#" className="nav-link text-light">Contact</a></li>
 
                         </ul>
-                        <a href="#" className="foodies-notification"><GrNotification /></a>
+                        <a href="#" className="foodies-notification"><MdNotifications /></a>
                         {/* <a href="#" className="foodies-profile">
                         <CgProfile/></a> */}
                         <a className="foodies-profile" onClick={this.stateSign}>
