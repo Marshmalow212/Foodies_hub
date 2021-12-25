@@ -18,10 +18,7 @@
     "react-router-dom": "^5.3.0",
     "react-scripts": "^4.0.3",
     "reactstrap": "^9.0.0",
-<<<<<<< HEAD
     "typescript": "^2.8.0",
-=======
->>>>>>> ccaea4baae9ebee23572d240fe565d554c2aa945
     "web-vitals": "^1.1.2",
     "webpack": "^4.0.0"
   },
