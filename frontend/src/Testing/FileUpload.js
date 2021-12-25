@@ -4,57 +4,80 @@ import axios from 'axios';
 class FileUpload extends Component {
     constructor(props) {
         super(props);
+        let serverRoot="http://localhost:5002/fileupload/";
         this.state={
             inputData:{},
-            formData:new FormData()
+            formData:new FormData(),
+            mediaLink:serverRoot,
+            responseData:null
         }
         this.getData = this.getData.bind(this);
         this.getFile = this.getFile.bind(this);
         this.sendData = this.sendData.bind(this);
     }
 
+    setMediaLink(filename){
+        this.setState({mediaLink:this.state.mediaLink.concat(filename)});
+    }
+
     getData(e){
-        e.preventDefault()
         this.setState({inputData:{[e.target.name]:e.target.value}});
+       
     }
     getFile(e){
         this.state.formData.append(e.target.name,e.target.files[0]);
     }
     sendData(e){
         e.preventDefault();
-        console.log(this.state.formData.keys());
+        var objKeys = Object.keys(this.state.inputData);
+        var objValues = Object.values(this.state.inputData);
+        // console.log(objKeys,objValues);
+        Object.entries(this.state.inputData).forEach(([key,value])=>{
+            // console.log(key,value);
+            this.state.formData.append(key,value);
+        })
+
         axios.post('http://localhost:5002/adduser',this.state.formData)
         .then(
             (res)=>{
-                console.log(res)
+                // console.log(res);
+                this.setState({responseData:res.data});
+                console.log(this.state.responseData);
+                this.setMediaLink(this.state.responseData.picture);
             }
         )
     }
     
     render() {
         return (
-            <div className="container ">
-                <div className="display-3 text-center">File Upload</div>
-                <form className="row d-flex justify-content-center " encType="multipart/form-data" >
+            <div className="container  ">
+                <h2 className="display-3 text-center">File Upload</h2>
+                <div className="col-md-6 row justify-content-center">
+                <form className="form" encType="multipart/form-data" >
                     <div >
                         <label>Name </label>
-                        <input type="text" name="name" className="form-control"  onChange={this.getData}/>                        
-                        <img className="img-fluid" alt="D:/Project/springtestproject/src/main/resources/uploads/nekro-ash-40.jpg" src="D:/Project/springtestproject/src/main/resources/uploads/nekro-ash-40.jpg"/>
+                        <input type="text" name="name" className="form-control" onChange={this.getData}  />                        
                     </div>
                     
                     <div>
                         <div>
-                            <span>Picture</span><input type="file" name="picture" className="form-control" onChange={this.getFile}/>
+                        <span>Picture</span><input type="file" name="picture" className="form-control" onChange={this.getFile} />
+                        <div className="container">
+                            
+                        <img className="img-fluid" alt={this.state.mediaLink} src={this.state.mediaLink}/>
+                        </div>
                         </div>                                                
                     </div>
 
                     <div className="mt-2 mb-2">
-                        <button type="submit" className="btn btn-dark" onClick={this.sendData}>Send</button>
+                        <button type="submit" className="btn btn-dark" onClick={this.sendData} >Send</button>
                     </div>
 
 
                     
                 </form>
+                </div>
+                
             </div>
         );
     }
