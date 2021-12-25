@@ -6,12 +6,17 @@ import Home from './Home/Home';
 import Restaurant from './Restaurant/Restaurant';
 import RestaurantInfoModal from './Restaurant/RestaurantInfoModal';
 import Food from './Food/Food';
+import Feed from './Feed/Feed';
+
 import RestaurateurSign from'./Roles/RestaurateurSign';
+import RestaurateurDashboard from'./Roles/RestaurateurDashboard';
+
 import CartItemCard from './Templates/CartItemCard';
 import Cart from './Order/Cart';
 import OrderConfirmation from './Order/OrderConfirmation';
 import CheckOut from './Delivery/CheckOut';
 import DeliverySummary from './Delivery/DeliverySummary';
+import RestaurantMenu from './Roles/Restaurateur/RestaurantMenu';
 import FileUpload from './Testing/FileUpload';
 
 const Router = ()=> {
@@ -23,8 +28,16 @@ const Router = ()=> {
             <Route exact path={'/'} component={Home}></Route>
             <Route exact path={'/restaurant'} component={Restaurant}></Route>
             <Route exact path={'/food'} component={Food}></Route>
+            <Route exact path={'/feed'} component={Feed}></Route>
             <Route exact path={'/modalrestaurant'} component={RestaurantInfoModal}></Route>
+            
+            {/* Restaurant  Dashboard*/}
             <Route exact path={'/restaurateur'} component={RestaurateurSign}></Route>
+            {/* <Route exact path="/resProfile"  component={RestaurateurDashboard} >
+                <Route path="rmenu" component={RestaurantMenu}/>
+            </Route> */}
+            <Route exact path={'/resProfile'} component={RestaurateurDashboard}></Route>
+
             <Route exact path={'/item-card'} component={CartItemCard}></Route>
             <Route exact path={'/cart'} component={Cart}></Route>
             <Route exact path={'/order-confirmation'} component={OrderConfirmation}></Route>
