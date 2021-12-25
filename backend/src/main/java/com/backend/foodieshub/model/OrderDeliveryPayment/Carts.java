@@ -23,8 +23,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "order")
-public class Order implements Serializable{
+@Table(name = "orders")
+public class Carts implements Serializable{
     
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)

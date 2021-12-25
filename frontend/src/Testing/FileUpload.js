@@ -9,7 +9,9 @@ class FileUpload extends Component {
             inputData:{},
             formData:new FormData(),
             mediaLink:serverRoot,
-            responseData:null
+            responseData:null,
+            mediaSrc:null,
+            uploadedMedia:null
         }
         this.getData = this.getData.bind(this);
         this.getFile = this.getFile.bind(this);
@@ -17,7 +19,8 @@ class FileUpload extends Component {
     }
 
     setMediaLink(filename){
-        this.setState({mediaLink:this.state.mediaLink.concat(filename)});
+       
+            this.setState({uploadedMedia:this.state.mediaLink.concat(filename)});
     }
 
     getData(e){
@@ -26,18 +29,25 @@ class FileUpload extends Component {
     }
     getFile(e){
         this.state.formData.append(e.target.name,e.target.files[0]);
+
+        var reader = new FileReader();
+        var url = reader.readAsDataURL(e.target.files[0]);
+        reader.onload=(e)=>{
+            
+            this.setState({mediaSrc: reader.result});
+        }
     }
     sendData(e){
         e.preventDefault();
-        var objKeys = Object.keys(this.state.inputData);
-        var objValues = Object.values(this.state.inputData);
+        // var objKeys = Object.keys(this.state.inputData);
+        // var objValues = Object.values(this.state.inputData);
         // console.log(objKeys,objValues);
         Object.entries(this.state.inputData).forEach(([key,value])=>{
             // console.log(key,value);
             this.state.formData.append(key,value);
         })
 
-        axios.post('http://localhost:5002/adduser',this.state.formData)
+        axios.post('http://localhost:5002/addfile',this.state.formData)
         .then(
             (res)=>{
                 // console.log(res);
@@ -45,7 +55,11 @@ class FileUpload extends Component {
                 console.log(this.state.responseData);
                 this.setMediaLink(this.state.responseData.picture);
             }
-        )
+        ).catch((err)=>{
+            console.log("Something Wrong!\n",err);
+        });
+
+
     }
     
     render() {
@@ -61,11 +75,18 @@ class FileUpload extends Component {
                     
                     <div>
                         <div>
-                        <span>Picture</span><input type="file" name="picture" className="form-control" onChange={this.getFile} />
+                        <span>Picture</span>
                         <div className="container">
                             
-                        <img className="img-fluid" alt={this.state.mediaLink} src={this.state.mediaLink}/>
+                        <img className="img-fluid" alt={this.state.mediaSrc} src={this.state.mediaSrc}/>
                         </div>
+                        <input type="file" name="picture" className="form-control" onChange={this.getFile} />
+
+                        {this.state.responseData?( <div className="container">
+                            
+                            <img className="img-fluid" alt={this.state.uploadedMedia} src={this.state.uploadedMedia}/>
+                            </div>):''}
+                       
                         </div>                                                
                     </div>
 
