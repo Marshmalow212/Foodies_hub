@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.backend.foodieshub.model.order_delivery;
+package com.backend.foodieshub.model.OrderDeliveryPayment;
 
+import com.backend.foodieshub.model.UserCommunity.Location;
 import java.io.Serializable;
 import java.sql.Time;
 import javax.persistence.Entity;
@@ -13,6 +14,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -32,7 +34,10 @@ public class Delivery implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private int location_id;
+    
+    @OneToOne
+    @JoinColumn(name="location_id")
+    private Location location;
     
     @ManyToOne
     @JoinColumn (name="delivery_method_id")

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.backend.foodieshub.model.order_delivery;
+package com.backend.foodieshub.model.OrderDeliveryPayment;
 
 import java.io.Serializable;
 import javax.persistence.Entity;
