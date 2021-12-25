@@ -10,6 +10,11 @@
   right: 25px;
   bottom: 50px;
 }
+.cart-box:hover {
+  background: #33635a;
+  height: 47px;
+  width: 47px;
+}
 .cart-icon {
   margin: auto;
   color: white;
