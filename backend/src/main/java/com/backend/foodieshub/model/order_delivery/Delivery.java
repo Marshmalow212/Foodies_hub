@@ -38,7 +38,7 @@ public class Delivery implements Serializable{
     @JoinColumn (name="delivery_method_id")
     private Delivery_method delivery_method_id;
     
-    
+    private double delivery_charge;
     private double net_amount;
     private Time delivery_time;
 }

@@ -1,4 +1,4 @@
-package com.backend.foodieshub.model;
+package com.backend.foodieshub.model.FoodRestaurant;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
