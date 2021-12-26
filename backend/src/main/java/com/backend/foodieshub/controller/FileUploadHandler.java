@@ -9,6 +9,9 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.time.LocalTime;
+import java.util.Date;
+import org.apache.tomcat.jni.Time;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.FileSystemResource;
 import org.springframework.web.multipart.MultipartFile;
@@ -30,8 +33,11 @@ public class FileUploadHandler {
     }
     
     
-    public String uploadFile(MultipartFile file) throws IOException{
-        String fileName = file.getOriginalFilename();
+    public String uploadFile(MultipartFile file,String name) throws IOException{
+        String originalName = file.getOriginalFilename();
+        int time = LocalTime.now().getNano();
+        String timeString = String.valueOf(time);
+        String fileName = name.concat("_").concat(timeString).concat("_").concat(originalName);
         byte[] fileSource = file.getBytes();
         Path path = Paths.get(this.basePath.concat(fileName));
         Path classPath = Paths.get((new ClassPathResource("").getURI().getRawPath()).substring(1).concat(this.resourcePath).concat(fileName));

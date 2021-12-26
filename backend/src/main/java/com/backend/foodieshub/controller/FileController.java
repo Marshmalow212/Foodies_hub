@@ -71,12 +71,10 @@ public class FileController  {
     @PostMapping("addfile")
     public ResponseEntity<Object> addUser(@ModelAttribute FormData formData,@RequestParam("picture") MultipartFile file ) throws IOException{
         FileUploadHandler fuh = new FileUploadHandler();
-        String Filename = fuh.uploadFile(file);
+        String Filename = fuh.uploadFile(file,formData.getName());
         
-        Users user = new Users();
-        user.setName(formData.getName());
-        user.setPicture(Filename);
+        formData.setName(Filename);
         
-        return new ResponseEntity(user,HttpStatus.OK);
+        return new ResponseEntity(formData,HttpStatus.OK);
     }
 }

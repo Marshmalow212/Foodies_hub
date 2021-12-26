@@ -32,6 +32,7 @@ public class Users implements Serializable {
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private int id;
     
+    private String username;
     private String name;
 
     @ManyToOne
@@ -41,5 +42,5 @@ public class Users implements Serializable {
     private String email;
     private long phone;
     private String picture;
-    
+    private String password;
 }
