@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import Header from '../Templates/Header';
 import Footer from '../Templates/Footer';
-import Search from '../Templates/Search';
+import './Food.css'
 import imag from "./../img/upfood.jpg";
 import FoodInfoModal from './FoodInfoModal';
 import CartButton from '../Templates/CartButton';
+import TestSearchBar from '../Templates/TestSearchBar';
 
 class Food extends Component {
     constructor(props) {
@@ -45,10 +46,12 @@ class Food extends Component {
         return (
             <div className="bgnormal">
                 <Header />
-                <Search />
+                {/* <Search /> */}
+                <div className='food-search-container'><TestSearchBar/></div>
                 <CartButton />
                 {this.state.showmodal?<FoodInfoModal closeModal={this.replace} />:""}
                 
+                <div className="sec-content">
                 <div className="container my-sm-2">
 
                     <div className="row">
@@ -86,6 +89,7 @@ class Food extends Component {
                     
 
 
+                </div>
                 </div>
                 <Footer />
 

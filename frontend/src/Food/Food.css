@@ -1,3 +1,8 @@
+.food-search-container {
+  width: 54%;
+  /* margin-left: 23%; */
+  margin: 60px 23% 60px 23%;
+}
 .sec-content {
   background: white;
   width: 100%;
@@ -5,10 +10,4 @@
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   box-shadow: -0px -3px 15px #888888;
-}
-
-.restaurant-search-container {
-  width: 54%;
-  /* margin-left: 23%; */
-  margin: 60px 23% 60px 23%;
 }

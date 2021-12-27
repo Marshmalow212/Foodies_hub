@@ -8,6 +8,8 @@ import RestaurantInfoModal from './Restaurant/RestaurantInfoModal';
 import Food from './Food/Food';
 import Feed from './Feed/Feed';
 
+import UserDashboard from './Roles/UserDashboard';
+
 import RestaurateurSign from'./Roles/RestaurateurSign';
 import RestaurateurDashboard from'./Roles/RestaurateurDashboard';
 
@@ -31,6 +33,9 @@ const Router = ()=> {
             <Route exact path={'/feed'} component={Feed}></Route>
             <Route exact path={'/modalrestaurant'} component={RestaurantInfoModal}></Route>
             
+            {/* User  Dashboard*/}
+            <Route exact path={'/user'} component={UserDashboard}></Route>
+
             {/* Restaurant  Dashboard*/}
             <Route exact path={'/restaurateur'} component={RestaurateurSign}></Route>
             {/* <Route exact path="/resProfile"  component={RestaurateurDashboard} >

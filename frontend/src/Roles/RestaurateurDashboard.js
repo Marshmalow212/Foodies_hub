@@ -40,6 +40,12 @@ export default function RestaurateurDashboard({match}) {
                             <li className='individual-nav'>
                                 <Link to={`${match.path}/rmenu`} style={{color:"white"}}>Menu</Link>
                             </li>
+                            <li className='individual-nav'>
+                                <Link to={`${match.path}/rorders`} style={{color:"white"}}>Orders</Link>
+                            </li>
+                            <li className='individual-nav'>
+                                <Link to={`${match.path}/rreports`} style={{color:"white"}}>Reports</Link>
+                            </li>
                         </ul>
                     </div>
                 </div>

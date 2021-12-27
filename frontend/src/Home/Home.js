@@ -40,7 +40,10 @@ class Home extends Component {
                         <h5 style={{ color: "#212121" }}>Order your desired food item.</h5>
                         <h5 style={{ color: "#212121" }}>Share your experience and connect with people</h5>
                     </div>
-                    <TestSearchBar />
+                    <div className="search-container-">
+                        <TestSearchBar />
+                    </div>
+                    {/* <TestSearchBar /> */}
                     {/* <Search /> */}
 
                     {/* cart floating button */}
