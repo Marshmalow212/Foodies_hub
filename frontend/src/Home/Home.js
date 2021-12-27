@@ -18,6 +18,7 @@ class Home extends Component {
         this.state = {
             
         }
+        console.log(JSON.parse(sessionStorage.getItem('user')));
     }
     
 

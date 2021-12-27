@@ -1,12 +1,14 @@
 package com.backend.foodieshub.model.FoodRestaurant;
 
+import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -19,10 +21,10 @@ import lombok.Setter;
 @AllArgsConstructor
 @Entity
 @Table(name = "restaurant")
-public class Restaurant {
+public class Restaurant implements Serializable {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     private String name;
@@ -34,7 +36,7 @@ public class Restaurant {
     private String latLongitude;
     private String picture;
 
-    @ManyToOne
+    @OneToOne
     @JoinColumn(name = "restaurant_id")
     private RestaurantRating restaurantRatingId;
 

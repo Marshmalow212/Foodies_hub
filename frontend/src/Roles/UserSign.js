@@ -3,6 +3,7 @@ import { useState } from "react";
 import './UserSign.css'
 import md5 from 'md5';
 import axios from 'axios';
+import { Alert, Modal } from 'reactstrap';
 
 function UserSign() {
     const [toggleState, setToggleState] = useState(1);
@@ -13,7 +14,8 @@ function UserSign() {
     const [passWord,setpassword] = useState('');
     const [confirmPassword,setconPass] = useState(false);
     const [Data,setdata] = useState(null);
-    let responseData = null;
+    let responseData = '';
+    var alertOpen = false;
 
     // setInputData({['hello']:'noway'});
 
@@ -66,6 +68,8 @@ function UserSign() {
         .then(res=>{
             responseData=res.data;
             getResponse();
+            sessionStorage.setItem('user',JSON.stringify(responseData));
+            window.location.replace('/user');
         }).catch(err=>{
             console.log('Something Wrong!: ',err);
         })
@@ -81,6 +85,11 @@ function UserSign() {
             responseData = res.data;
             setdata((responseData));
             getResponse();
+            alertOpen = !alertOpen;
+            setTimeout(() => {
+                alertOpen = !alertOpen;
+                window.location.replace('/');
+            }, 3000);
         }).catch(err=>{
             console.log('Something Wrong!: ',err);
         })       
@@ -91,6 +100,9 @@ function UserSign() {
 
     return (
         <div className="user-sign-container">
+            <Modal isOpen={alertOpen}>
+                <Alert>{responseData.message?responseData.message:''}</Alert>
+            </Modal>
             <div className="bloc-tabs">
                 <button
                     className={toggleState === 1 ? "tabs active-tabs" : "tabs"}

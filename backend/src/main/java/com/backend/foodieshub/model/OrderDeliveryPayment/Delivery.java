@@ -35,15 +35,8 @@ public class Delivery implements Serializable{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     
-    @OneToOne
-    @JoinColumn(name="location_id")
-    private Location location;
-    
-    @ManyToOne
-    @JoinColumn (name="delivery_method_id")
-    private Delivery_method delivery_method_id;
-    
+    private int user_id;
+    private String delivery_method;    
     private double delivery_charge;
     private double net_amount;
-    private Time delivery_time;
 }

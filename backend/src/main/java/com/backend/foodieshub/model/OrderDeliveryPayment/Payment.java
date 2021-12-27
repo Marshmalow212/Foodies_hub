@@ -32,7 +32,7 @@ public class Payment implements Serializable{
     
     private int user_id;
     
-    private String type;
+    private String method;
     private double amount;
     private String status;
     
