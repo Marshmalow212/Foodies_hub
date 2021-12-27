@@ -53,7 +53,7 @@ class FileUpload extends Component {
                 // console.log(res);
                 this.setState({responseData:res.data});
                 console.log(this.state.responseData);
-                this.setMediaLink(this.state.responseData.picture);
+                this.setMediaLink(this.state.responseData.name);
             }
         ).catch((err)=>{
             console.log("Something Wrong!\n",err);

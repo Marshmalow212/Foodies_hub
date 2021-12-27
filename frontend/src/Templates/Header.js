@@ -38,9 +38,9 @@ class Header extends Component {
         // }
     }
     outClickClose(){
-        setTimeout(() => {
-            this.setState({showForm:!this.state.showForm});            
-        }, 5000);
+        // setTimeout(() => {
+        //     this.setState({showForm:!this.state.showForm});            
+        // }, 5000);
     }
 
 
@@ -49,7 +49,7 @@ class Header extends Component {
             <div >
 
                
-                    <Modal isOpen={this.state.showForm}  className="user-sign-modal" onMouseLeave={(e)=>this.outClickClose()}>
+                    <Modal isOpen={this.state.showForm}  className="user-sign-modal" onMouseLeave={(e)=>this.outClickClose()} toggle={()=>this.setState({showForm:false})} >
                         <UserSign />
                     </Modal>
 

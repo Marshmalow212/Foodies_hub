@@ -14,7 +14,7 @@ class Home extends Component {
     constructor(props) {
         super(props);
         this.state = {
-
+            
         }
     }
 
@@ -28,7 +28,7 @@ class Home extends Component {
             homeFeed.push(<HomeFeeds />);
         }
         return (
-            <div className="bgnormal" style={{ position: "relative" }}>
+            <div className="bgnormal" style={{ position: "relative" }} >
                 <Header />
                 {/* {console.log(this.props.recv)} */}
                 {/* {this.props.recv===true?<UserSign/>:""} */}
@@ -50,7 +50,7 @@ class Home extends Component {
                     <CartButton />
                 </div>
 
-                <div className="container" style={{ height: "100vh" }}>
+                <div className="container mt-5" style={{ height: "50vh" }}>
                     {/* Top Section*/}
                     <div className="row">
                         <div className="col-sm-6 ">
