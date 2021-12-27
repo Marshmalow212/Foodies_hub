@@ -5,7 +5,7 @@
 .header-container {
   background: var(--beta-color);
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0), 0 3px 3px 0 rgba(255, 188, 43, 0.3);
-  position: sticky;
+  position: fixed;
   top: 0;
   width: 100%;
   /* font-weight: 200; */

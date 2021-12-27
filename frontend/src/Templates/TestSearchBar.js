@@ -8,8 +8,13 @@ function TestSearchBar() {
             <div className="Srow">
                 <input className="Sinput" type="text" placeholder=" Search here..."/>
                 <select className="Sfilter">
-                    <option>option1</option>
-                    <option>option2</option>
+                    <option>Food</option>
+                    <option>Restaurant</option>
+                </select>
+                <select className="Sfilter">
+                    <option>Select</option>
+                    <option>Price</option>
+                    <option>Rating</option>
                 </select>
                 <button className="SrchBtn"><FiSearch/></button>
             </div>

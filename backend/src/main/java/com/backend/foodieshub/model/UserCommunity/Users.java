@@ -27,20 +27,21 @@ import lombok.NoArgsConstructor;
 @Entity
 @Table(name = "users")
 public class Users implements Serializable {
-    
+
     @Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    
+
     private String username;
     private String name;
 
     @ManyToOne
-    @JoinColumn(name="location_id")
+    @JoinColumn(name = "location_id")
     private Location location;
-    
+
     private String email;
     private long phone;
     private String picture;
+    private String address;
     private String password;
 }

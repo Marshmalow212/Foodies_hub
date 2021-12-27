@@ -5,45 +5,52 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
 
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name="restaurant")
+@Table(name = "restaurant")
 public class Restaurant {
 
     @Id
     @GeneratedValue
     private int id;
-    
+
     private String name;
     private String description;
     private String phone;
     private String email;
+    private String passworString;
     private String address;
     private String latLongitude;
+    private String picture;
 
-    // private int restaurantRatingId;
-    
+    @ManyToOne
+    @JoinColumn(name = "restaurant_id")
+    private RestaurantRating restaurantRatingId;
+
     // //CONSTRUCTOR
     // public Restaurant(){ }
 
-    // public Restaurant(int id, String name, String description,String phone,String email, String address, String latLongitude){
-    //     super();
-    //     this.id = id;
-    //     this.name = name;
-    //     this.description = description;
-    //     this.phone = phone;
-    //     this.email = email;
-    //     this.address = address;
-    //     this.latLongitude = latLongitude;
+    // public Restaurant(int id, String name, String description,String phone,String
+    // email, String address, String latLongitude){
+    // super();
+    // this.id = id;
+    // this.name = name;
+    // this.description = description;
+    // this.phone = phone;
+    // this.email = email;
+    // this.address = address;
+    // this.latLongitude = latLongitude;
     // }
 
     // // GETTER & SETTER
@@ -54,7 +61,8 @@ public class Restaurant {
     // public void setName(String name) {this.name = name;}
 
     // public String getDescription() {return description;}
-    // public void setDescription(String description) {this.description = description;}
+    // public void setDescription(String description) {this.description =
+    // description;}
 
     // public String getPhone() {return phone;}
     // public void setPhone(String phone) {this.phone = phone;}
@@ -66,5 +74,6 @@ public class Restaurant {
     // public void setAddress(String address) {this.address = address;}
 
     // public String getLatLongitude() {return latLongitude;}
-    // public void setLatLongitude(String latLongitude) {this.latLongitude = latLongitude;}
+    // public void setLatLongitude(String latLongitude) {this.latLongitude =
+    // latLongitude;}
 }

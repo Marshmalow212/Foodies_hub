@@ -30,7 +30,7 @@ class Home extends Component {
         }
         return (
             <div className="bgnormal" style={{ position: "relative" }} >
-                <Header />
+                <div style={{height:"57px"}}><Header/></div>
                 {/* {console.log(this.props.recv)} */}
                 {/* {this.props.recv===true?<UserSign/>:""} */}
 
@@ -41,7 +41,10 @@ class Home extends Component {
                         <h5 style={{ color: "#212121" }}>Order your desired food item.</h5>
                         <h5 style={{ color: "#212121" }}>Share your experience and connect with people</h5>
                     </div>
-                    <TestSearchBar />
+                    <div className="search-container-">
+                        <TestSearchBar />
+                    </div>
+                    {/* <TestSearchBar /> */}
                     {/* <Search /> */}
 
                     {/* cart floating button */}

@@ -1,7 +1,15 @@
 .HomeIntro {
-  padding-top: 12%;
+  padding-top: 10%;
   margin-left: 30px;
+  margin-bottom: 20px;
 }
+
+.search-container- {
+  margin-left: 30px;
+  width: 55%;
+  height: 60px;
+}
+
 .FeedText {
   margin-left: 100px;
   margin-top: 5rem;
