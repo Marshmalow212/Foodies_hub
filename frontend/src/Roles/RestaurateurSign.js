@@ -1,13 +1,43 @@
 import React,{useState} from 'react'
 import './RestaurateurSign.css'
-import {Link} from "react-router-dom"
+import {Link,useHistory} from "react-router-dom"
 import bgimg from '../img/resSignPage.png'
 import { Modal } from 'reactstrap';
+import axios from 'axios';
+
 
 function RestaurateurSign() {
 
+    const [REmail,setREmail] =useState('');
+    const [RPass,setRPass]=useState('')
+    const [signInData, setInData] = useState({});
+    const history = useHistory();
+
     const [regModalOpen, setRegModalOpen] = useState(false);
     const toggleReg = () => setRegModalOpen(!regModalOpen);
+
+    function getDataIn(e) {
+        setInData({ ...signInData, [e.target.name]: e.target.value });
+    }
+
+    function sendData(e) {
+        e.preventDefault();
+        // console.log(inputData);
+        if ((Object.keys(signInData).length) > 0) {
+        axios.post('http://localhost:5002/rlogin' ,signInData)
+        .then(res=>{
+            if(res.data.name){
+                localStorage.setItem('id', res.data.id);
+                history.push('resProfile')
+            }else{
+                window.alert('User Not Found')
+            }
+
+        }).catch(err=>{
+            console.log('Something Wrong!: ',err);
+        })
+        }
+    }
 
     return (
         <div className="r-sign">
@@ -84,18 +114,22 @@ function RestaurateurSign() {
                     <input 
                         className="r-input" 
                         type="email" 
+                        name='email'
                         required 
                         placeholder="Enter your email"
+                        onChange={(e) => getDataIn(e)}
                     ></input>
                     <input 
                         className="r-input" 
                         type="password" 
+                        name='password'
                         required 
                         placeholder="Enter your password"
+                        onChange={(e) => getDataIn(e)}
                     ></input>
                     <br/>
                     <Link to='#' className='forgot-link'>Forgot password</Link>
-                    <button className="r-btn" type='submit'>LogIn</button>
+                    <button className="r-btn" onClick={(e) => sendData(e)}>LogIn</button>
                     <button className="r-btn-2" onClick={toggleReg}>Register Restaurant</button>
                     {/* <div className="resSignImg" >
                         <img src={bgimg} />

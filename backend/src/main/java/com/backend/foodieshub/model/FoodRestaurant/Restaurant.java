@@ -29,13 +29,13 @@ public class Restaurant {
     private String description;
     private String phone;
     private String email;
-    private String passworString;
+    private String password;
     private String address;
     private String latLongitude;
     private String picture;
 
     @ManyToOne
-    @JoinColumn(name = "restaurant_id")
+    @JoinColumn(name = "rating_id")
     private RestaurantRating restaurantRatingId;
 
     // //CONSTRUCTOR

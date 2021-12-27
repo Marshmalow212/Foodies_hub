@@ -14,7 +14,6 @@ import org.springframework.data.repository.query.Param;
  *
  * @author marshmalow
  */
-public abstract class UsersDao implements UsersRepository{
-    
-    
+public abstract class UsersDao implements UsersRepository {
+
 }

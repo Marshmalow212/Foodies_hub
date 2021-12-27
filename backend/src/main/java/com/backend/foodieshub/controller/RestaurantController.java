@@ -3,6 +3,10 @@ package com.backend.foodieshub.controller;
 import com.backend.foodieshub.model.FoodRestaurant.Restaurant;
 import com.backend.foodieshub.service.RestaurantService;
 
+import com.backend.foodieshub.model.AxiosResponse.Response;
+import org.springframework.http.ResponseEntity;
+import org.springframework.http.HttpStatus;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -19,13 +23,27 @@ import java.util.List;
 // @CrossOrigin(origins = "localhost:5001")
 @CrossOrigin
 public class RestaurantController {
-    
+
     @Autowired
     private RestaurantService restaurantService;
 
     @PostMapping("/restaurant")
     public void addRestaurant(@RequestBody Restaurant restaurant) {
         restaurantService.saveRestaurant(restaurant);
+    }
+
+    @PostMapping("/rlogin")
+    public ResponseEntity<Object> getRestaurantEP(@RequestBody Restaurant restaurant) {
+        String email = restaurant.getEmail();
+        String password = restaurant.getPassword();
+        Restaurant rlogin = restaurantService.getRestaurantEP(email, password);
+        Response res = new Response();
+        int __id = rlogin.getId();
+        if (__id > 0) {
+            return new ResponseEntity(rlogin, HttpStatus.OK);
+        }
+        res.setMessage("No Restaurant Found!");
+        return new ResponseEntity(res, HttpStatus.OK);
     }
 
     @RequestMapping("/restaurants")
@@ -47,5 +65,5 @@ public class RestaurantController {
     public void deleteRestaurant(@PathVariable int id) {
         restaurantService.deleteRestaurant(id);
     }
-    
+
 }

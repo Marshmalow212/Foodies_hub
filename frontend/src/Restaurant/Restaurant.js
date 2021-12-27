@@ -25,15 +25,10 @@ class Restaurant extends Component {
     }
     componentDidMount(){
         console.log("Restaurant Again");
-        // this.setState({showmodal:!this.state.showmodal});
         axios.get('http://localhost:5002/restaurants').then(resp => {
             this.setState({allRestaurants: resp.data});
-            // console.log(resp.data);
             console.log(this.state.allRestaurants)
         });
-
-        // console.log(this.state.allRestaurants)
-        // console.log(this.allRestaurants)
     }
     //restaurant detail on
     detail(e){
@@ -84,7 +79,7 @@ class Restaurant extends Component {
                                 <div className="col-sm-4 ">
 
                                     <img className="border-0 border-none border-radius" src={imag} alt="image" style={this.state.tog?{  height: "200px" }:{ maxWidth: "100%", height: "100px" }} onMouseEnter={()=>{this.setState({tog:true}); console.log("Mouse Entered!");}} onMouseLeave={()=>{this.setState({tog:false});console.log("Mouse Left!");}}/>
-                                    <label htmlFor="">Rating: {this.ratings(data.restaurantRatingId.restaurantRating)}</label>
+                                    <label htmlFor="">Rating: {this.ratings(data.restaurantRatingId)}</label>
                                     <p style={{ fontSize: "14px" }}><span>Location:</span> {data.address}</p>
                                     <div><button className="btn btn-primary mt-2" onClick={this.detail}>Details</button></div>
 

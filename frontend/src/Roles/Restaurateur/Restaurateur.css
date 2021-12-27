@@ -70,3 +70,18 @@
   height: 160px;
   box-shadow: var(--alpha-shadow);
 }
+.type-card {
+  display: flex;
+}
+.item-card-n {
+  /* display: flex;
+  flex-wrap: "wrap";
+  flex-direction: column; */
+  border: 1px solid burlywood;
+  border-radius: 5px;
+  height: 200px;
+  color: black;
+  width: 150px;
+  margin: 10px;
+  padding: 10px;
+}

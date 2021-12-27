@@ -1,11 +1,26 @@
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
 import { GrAdd } from "react-icons/gr";
 import RestaurantAddMenu from "./RestaurantAddMenu"
 import { Modal } from 'reactstrap';
 import './Restaurateur.css'
+import axios from 'axios';
 
 function RestaurantMenu() {
     // const [show, setShow] = useState(false);
+    const [allFood, setAllFood] = useState([]);
+    useEffect(() => {
+            const fetchData = async () =>{
+                try {
+                  const {data: response} = await axios.get('http://localhost:5002/menu');
+                  setAllFood(response);
+                  console.log(response);
+                } catch (error) {
+                  console.error(error.message);
+                }
+              }
+          
+              fetchData();
+      },[])
     const [modalOpen, setModalOpen] = useState(false);
     const toggle = () => setModalOpen(!modalOpen);
 
@@ -26,12 +41,14 @@ function RestaurantMenu() {
                     <RestaurantAddMenu/>
                     </Modal>
                     <div className="type-card">
-                        <h4>Type 1</h4>
-                        <div style={{display:"flex"}}>
-                        <div className="item-card">1</div>
-                        <div className="item-card">2</div>
-                        <div className="item-card">3</div>
+                        <h4>Foods</h4>
+                        {allFood ? allFood.map(data => {
+                    return(
+                        <div className="item-card-m" key={data.id}>
+                            <div className="item-card-n"><h4>{data.price}</h4></div>
                         </div>
+                    )
+                    }) : <h3>Didn't get any</h3> }
                     </div>
                 </div>
         </div>
