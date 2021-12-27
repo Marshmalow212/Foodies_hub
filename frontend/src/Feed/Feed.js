@@ -45,7 +45,8 @@ function Feed() {
 
     return (
         <div className='feed-container'>
-            <Header/>
+            {/* <Header/> */}
+            <div style={{height:"57px"}}><Header/></div>
 
             <div className='row main-container'>
                 <div className='col feed-left'>

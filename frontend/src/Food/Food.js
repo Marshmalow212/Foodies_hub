@@ -45,7 +45,8 @@ class Food extends Component {
 
         return (
             <div className="bgnormal">
-                <Header />
+                {/* <Header /> */}
+                <div style={{height:"57px"}}><Header/></div>
                 {/* <Search /> */}
                 <div className='food-search-container'><TestSearchBar/></div>
                 <CartButton />

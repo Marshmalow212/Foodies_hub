@@ -5,6 +5,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -29,8 +32,11 @@ public class Restaurant {
     private String passworString;
     private String address;
     private String latLongitude;
+    private String picture;
 
-    // private int restaurantRatingId;
+    @ManyToOne
+    @JoinColumn(name = "restaurant_id")
+    private RestaurantRating restaurantRatingId;
 
     // //CONSTRUCTOR
     // public Restaurant(){ }

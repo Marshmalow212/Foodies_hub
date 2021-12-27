@@ -29,7 +29,7 @@ class Home extends Component {
         }
         return (
             <div className="bgnormal" style={{ position: "relative" }} >
-                <Header />
+                <div style={{height:"57px"}}><Header/></div>
                 {/* {console.log(this.props.recv)} */}
                 {/* {this.props.recv===true?<UserSign/>:""} */}
 
