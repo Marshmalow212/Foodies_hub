@@ -33,6 +33,9 @@ public class Carts implements Serializable{
     private int item_list_id;
     private int delivery_id;
     private int payment_id;
+        private String item_description;
+    private int item_count;
+    private double total_amount;
     
 
     

@@ -107,8 +107,9 @@ a {
 }
 
 /* delivery vendors item styles */
-#deliveryvendors .deliveryvendorsbody button {
+#deliveryvendors .deliveryvendorsbody div{
   height: 8rem;
+  width: fit-content;
 }
 
 /* delivery summary styles */
@@ -135,3 +136,4 @@ a {
 .user-sign-modal{
   background:rgba(255, 225, 179, 0);
 } */
+

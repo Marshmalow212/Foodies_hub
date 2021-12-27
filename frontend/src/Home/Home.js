@@ -9,6 +9,8 @@ import HomeFeeds from './HomeFeeds';
 import RightNavigation from './RightNavigation';
 import "./Home.css"
 import CartButton from '../Templates/CartButton';
+import { flattenDiagnosticMessageText } from 'typescript';
+import CartModal from '../Templates/CartModal';
 
 class Home extends Component {
     constructor(props) {
@@ -17,7 +19,6 @@ class Home extends Component {
             
         }
     }
-
     
 
     render() {
@@ -44,7 +45,8 @@ class Home extends Component {
                     {/* <Search /> */}
 
                     {/* cart floating button */}
-                    <CartButton />
+                    {/* <CartButton />
+                    <CartModal /> */}
                 </div>
 
                 <div className="container mt-5" style={{ height: "50vh" }}>
