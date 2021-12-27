@@ -20,6 +20,7 @@ import CheckOut from './Delivery/CheckOut';
 import DeliverySummary from './Delivery/DeliverySummary';
 import RestaurantMenu from './Roles/Restaurateur/RestaurantMenu';
 import FileUpload from './Testing/FileUpload';
+import UserInfo from './Roles/User/UserInfo';
 
 const Router = ()=> {
         return ( 

@@ -23,19 +23,17 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "orders")
+@Table(name = "carts")
 public class Carts implements Serializable{
     
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private int id;
     private int user_id;
-    private int item_list_id;
-    private int delivery_id;
-    private int payment_id;
-        private String item_description;
+    private String item_name;
+    private String item_description;
     private int item_count;
-    private double total_amount;
+    private double unit_price;
     
 
     

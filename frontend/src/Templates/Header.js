@@ -70,7 +70,11 @@ class Header extends Component {
     stateSign(e) {
         e.preventDefault();
 
-        if(!this.state.showForm){
+        if(sessionStorage.getItem('user')){
+            window.location.replace('/user');
+        }
+
+        else if(!this.state.showForm){
             this.setState({showForm:!this.state.showForm});
         }
 
